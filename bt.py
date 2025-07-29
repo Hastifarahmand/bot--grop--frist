@@ -13,3 +13,14 @@ def welcome_to_new_members(message):
 def regexp_message(message):
     bot.reply_to(message, "What your saying is not appropriate here.")
 bot.infinity_polling()
+
+@bot.message_handler(commands="/hello ")
+def wel_hel_han(message):
+    bot.reply_to(message ,"hi {message.chat.id}")
+@bot.message_handler(content_types=['new_ch'
+'at_members'])
+@bot.message_handler("chat_id"=CHAT_ID)
+
+def save_member(message):
+    for member in  message.new_chat_members:
+        bot.

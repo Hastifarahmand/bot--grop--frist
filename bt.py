@@ -7,17 +7,20 @@ bot=telebot.TeleBot("8045809996:AAGfi2BQw-jmhHBZPEY5PLcU72ZZIBQC8TA")
 def welcome_to_new_members(message):
     for new_member in message.new_chat_members:
         bot.send_message(message.chat.id,f"خوش اومدی به گروه {message.from_user.first_name}")
-
+fosh=["بی پدر","نادان","زشت","خبیص","احمق"]
+bot.message_handler(content_types=fosh)
+def regexp_message(message):
+    bot.reply_to(message, "حرفی که زدی درست نبود")
 
 @bot.message_handler(regexp="خر")
 def regexp_message(message):
     bot.reply_to(message, "حرفی که زدی درست نبود")
 
-@bot.message_handler(commands=['admin'])
-def get_admin(m):
-    bot.get_chat_member(m.chat.id,user_id=m.from_user.id)
-    print("yessssssssssssssssssss")
-    print(f"get_admin")
+# @bot.message_handler(commands=['admin'])
+# def get_admin(m):
+#     bot.get_chat_member(m.chat.id,user_id=m.from_user.id)
+#     print("yessssssssssssssssssss")
+#     print(f"get_admin")
 
 # @bot.
 # bot.chat_member_handler()

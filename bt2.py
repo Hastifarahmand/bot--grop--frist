@@ -45,6 +45,7 @@ def get_admin(m):
         print("User Info:", member)
     except Exception as e:
         print(f"Error: {e}")
+    
 
-# برای شروع ربات
+    
 bot.polling()
